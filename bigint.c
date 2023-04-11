@@ -4,7 +4,21 @@
 
 
 /* Atribuição (com extensão) */
-void big_val (BigInt res, long val);
+void big_val (BigInt res, long val) {
+    unsigned char* p1 = (unsigned char*)&val;
+    int n = sizeof(long);
+    for (int i = 0; i < n; i++, p1++) {
+        *(res + i) = *p1;
+    }
+    p1--;
+    if ((*p1) & 0x80) {
+        for (int i = 8; i < 16; i++)
+	    *(res + i) = 0xFF;
+    } else {
+        for (int i = 8; i < 16; i++)
+	    *(res + i) = 0x00;
+    }
+}
 
 /* Operações Aritméticas */
 
