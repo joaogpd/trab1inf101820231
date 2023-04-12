@@ -3,6 +3,7 @@
 #include <limits.h>
 #include "bigint.h"
 
+
 void dump(void* p, int n) {
     unsigned char* p1 = (unsigned char*)p;
     while (n--) {
@@ -11,6 +12,9 @@ void dump(void* p, int n) {
     }
 }
 
+/* Funcao para comparar se o valor apontado por test esta corretamente 
+ * representado pelo valor apontado por res.
+ */
 void compare(void* res, void* test) {
     unsigned char* res1 = (unsigned char*)res;    
     unsigned char* test1 = (unsigned char*)test;
@@ -48,6 +52,7 @@ void compare(void* res, void* test) {
 }
 
 int main(void) {
+    printf("Testagem funcao big_val(): \n");
     long temp = 0;
     /* Caso 1.a) */
     BigInt caso_1_a;
