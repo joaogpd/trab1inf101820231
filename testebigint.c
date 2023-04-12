@@ -97,5 +97,55 @@ int main(void) {
 
     compare(&caso_1_g, &temp);
 
+    printf("Testagem funcao big_comp2(): \n");
+    
+    /* Caso 2.c) */
+    BigInt caso_2_c;
+    BigInt caso_2_c_2;
+    temp = -53;
+    big_val(caso_2_c, temp);
+    compare(&caso_2_c, &temp);
+    big_comp2(caso_2_c_2, caso_2_c);
+
+    dump(caso_2_c_2, 16);
+    dump(caso_2_c, 16);
+    compare(&caso_2_c_2, &caso_2_c);
+   /* * Caso 2.b) *
+    BigInt caso_1_b;
+    temp = 35345346;
+    big_val(caso_1_b, temp);
+    
+    compare(&caso_1_b, &temp);
+    * Caso 2.c) *
+    BigInt caso_1_c;
+    temp = -22;
+    big_val(caso_1_c, temp);
+
+    compare(&caso_1_c, &temp);
+    * Caso 2.d) *
+    BigInt caso_1_d;
+    temp = 31;
+    big_val(caso_1_d, temp);
+
+    compare(&caso_1_d, &temp);
+    * Caso 2.e) *
+    BigInt caso_1_e;
+    temp = LONG_MAX;
+    big_val(caso_1_e, temp);
+
+    compare(&caso_1_e, &temp);
+    * Caso 2.f) *
+    BigInt caso_1_f;
+    temp = LONG_MIN;
+    big_val(caso_1_f, temp);
+
+    compare(&caso_1_f, &temp);
+    * Caso 2.g) *
+    BigInt caso_1_g;
+    temp = 0;
+    big_val(caso_1_g, temp);
+
+    compare(&caso_1_g, &temp);
+*/
     return 0;
 }
