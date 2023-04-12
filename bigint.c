@@ -33,6 +33,7 @@ void big_comp2(BigInt res, BigInt a) {
 
     if (part1 == LONG_MIN || part2 == LONG_MIN) return;
 
+
     for (int i = 0; i < 8; i++) {
         *(part1_dump + i) = *(a + i);
     }
@@ -40,9 +41,15 @@ void big_comp2(BigInt res, BigInt a) {
         *(part2_dump + i) = *(a + 8 + i);
     }
 
-    part1 = (part1 ^ 0xFFFFFFFF) + 1;
-    part2 = (part2 ^ 0xFFFFFFFF) + 1;
+    if (part1 == 0 && part2 == 0) goto atr;
 
+    part1 = ~part1 + 1;
+    if (part1 > LONG_MAX) {
+        part2 = ~part2 + 1;
+    } else
+        part2 = ~part2;
+
+atr:
     for (int i = 0; i < 8; i++) {
         *(res + i) = *part1_dump;
 	part1_dump++;

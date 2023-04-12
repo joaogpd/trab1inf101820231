@@ -99,36 +99,47 @@ int main(void) {
 
     printf("Testagem funcao big_comp2(): \n");
     
+    /* Caso 2.a) */
+    BigInt caso_2_a;
+    BigInt caso_2_a_aux;
+    temp = -53435345634;
+    big_val(caso_2_a, temp);
+    big_comp2(caso_2_a_aux, caso_2_a);
+
+    temp = 53435345634;
+    big_val(caso_2_a, temp);
+    compare(&caso_2_a_aux, &caso_2_a);
+    /* Caso 2.a) */
+    BigInt caso_2_b;
+    BigInt caso_2_b_aux;
+    temp = 345453453;
+    big_val(caso_2_b, temp);
+    big_comp2(caso_2_b_aux, caso_2_b);
+
+    temp = -345453453;
+    big_val(caso_2_b, temp);
+    compare(&caso_2_b_aux, &caso_2_b);
     /* Caso 2.c) */
     BigInt caso_2_c;
-    BigInt caso_2_c_2;
-    temp = -53;
+    BigInt caso_2_c_aux;
+    temp = LONG_MAX;
     big_val(caso_2_c, temp);
-    compare(&caso_2_c, &temp);
-    big_comp2(caso_2_c_2, caso_2_c);
+    big_comp2(caso_2_c_aux, caso_2_c);
 
-    dump(caso_2_c_2, 16);
-    dump(caso_2_c, 16);
-    compare(&caso_2_c_2, &caso_2_c);
-   /* * Caso 2.b) *
-    BigInt caso_1_b;
-    temp = 35345346;
-    big_val(caso_1_b, temp);
-    
-    compare(&caso_1_b, &temp);
-    * Caso 2.c) *
-    BigInt caso_1_c;
-    temp = -22;
-    big_val(caso_1_c, temp);
+    temp = -LONG_MAX;
+    big_val(caso_2_c, temp);
+    compare(&caso_2_c_aux, &caso_2_c);
+    /* Caso 2.d) */
+    BigInt caso_2_d;
+    BigInt caso_2_d_aux;
+    temp = 0;
+    big_val(caso_2_d, temp);
+    big_comp2(caso_2_d_aux, caso_2_d);
 
-    compare(&caso_1_c, &temp);
-    * Caso 2.d) *
-    BigInt caso_1_d;
-    temp = 31;
-    big_val(caso_1_d, temp);
-
-    compare(&caso_1_d, &temp);
-    * Caso 2.e) *
+    temp = -0;
+    big_val(caso_2_d, temp);
+    compare(&caso_2_d_aux, &caso_2_d);
+    /* Caso 2.e) *
     BigInt caso_1_e;
     temp = LONG_MAX;
     big_val(caso_1_e, temp);
@@ -146,6 +157,6 @@ int main(void) {
     big_val(caso_1_g, temp);
 
     compare(&caso_1_g, &temp);
-*/
+    */
     return 0;
 }
