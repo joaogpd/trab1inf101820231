@@ -51,44 +51,44 @@ int main(void) {
     long temp = 0;
     /* Caso 1.a) */
     BigInt caso_1_a;
-    temp = -5;
-    big_val(caso_1_a, -5);
+    temp = -5343253;
+    big_val(caso_1_a, temp);
 
     compare(&caso_1_a, &temp);
     /* Caso 1.b) */
     BigInt caso_1_b;
-    temp = 3;
-    big_val(caso_1_b, 3);
+    temp = 35345346;
+    big_val(caso_1_b, temp);
     
     compare(&caso_1_b, &temp);
     /* Caso 1.c) */
     BigInt caso_1_c;
-    temp = 3;
-    big_val(caso_1_c, 3);
+    temp = -22;
+    big_val(caso_1_c, temp);
 
     compare(&caso_1_c, &temp);
     /* Caso 1.d) */
     BigInt caso_1_d;
-    temp = -2;
-    big_val(caso_1_d, -2);
+    temp = 31;
+    big_val(caso_1_d, temp);
 
     compare(&caso_1_d, &temp);
     /* Caso 1.e) */
     BigInt caso_1_e;
     temp = LONG_MAX;
-    big_val(caso_1_e, LONG_MAX);
+    big_val(caso_1_e, temp);
 
     compare(&caso_1_e, &temp);
     /* Caso 1.f) */
     BigInt caso_1_f;
     temp = LONG_MIN;
-    big_val(caso_1_f, LONG_MIN);
+    big_val(caso_1_f, temp);
 
     compare(&caso_1_f, &temp);
     /* Caso 1.g) */
     BigInt caso_1_g;
     temp = 0;
-    big_val(caso_1_g, 0);
+    big_val(caso_1_g, temp);
 
     compare(&caso_1_g, &temp);
 

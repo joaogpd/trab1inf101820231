@@ -13,8 +13,7 @@ void big_shr(BigInt res, BigInt a, int n);
 void big_sar(BigInt res, BigInt a, int n);
 
 O módulo testebigint tem as funções de teste:
-void dump(void* p, int n);
-
+void compara(void* res, void* teste);
 Testes:
 
 Caso 1:
@@ -27,14 +26,15 @@ Caso 1:
 Caso 1:
  1 - atribuição correta do valor, da função big_val
  2 - ver se a função big_val está atribuindo o valor corretamente
- 3 - atribuimos o valor de "retorno" da função para uma variável, e, então, fazemos um dump do array "retornado" para ver se a representação está condizente
+ 3 - realizamos a atribuição do valor ao BigInt e, depois, comparamos byte por byte na memória até 8 bytes para ver se está correta a tradução.
+Depois disso, confirmamos se o número é positivo ou negativo, e fazemos a verificação da extensão para 128 bits adequada ou nao
  4 - res: array a ser preenchido, val: valor a ser traduzido
- 5 - um array contendo a representação do valor val em 128 bits (16 bytes)
+ 5 - um array contendo a representação do valor val em 128 bits (16 bytes), com a devida extensão
 
-Caso 1.a) Valor negativo grande
-Caso 1.b) Valor positivo pequeno
+Caso 1.a) Valor negativo pequeno
+Caso 1.b) Valor positivo grande 
 Caso 1.c) Valor negativo
-Caso 1.d) Valor negativo
+Caso 1.d) Valor positivo
 Caso 1.e) LONG_MAX
 Caso 1.f) LONG_MIN
 Caso 1.g) Valor zero
