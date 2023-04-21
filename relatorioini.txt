@@ -68,4 +68,4 @@ Caso 1.b) Dois numeros negativos de 8 bytes
 Caso 1.c) Dois numeros positivos que juntos dao mais de 8 bytes
 Caso 1.d) Dois numeros negativos que juntos dao mais de 8 bytes
 Caso 1.e) Dois numeros negativos que juntos dao menos que BIGINT_MIN
-Caso 1.f) Dois numeros positivos que juntos dao mais que BIGINT_MAX
+
