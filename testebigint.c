@@ -15,6 +15,7 @@ void dump(void* p, int n) {
 /* Funcao para comparar se o valor apontado por test esta corretamente 
  * representado pelo valor apontado por res.
  */
+
 void compare(void* res, void* test) {
     unsigned char* res1 = (unsigned char*)res;    
     unsigned char* test1 = (unsigned char*)test;
@@ -109,7 +110,7 @@ int main(void) {
     temp = 53435345634;
     big_val(caso_2_a, temp);
     compare(&caso_2_a_aux, &caso_2_a);
-    /* Caso 2.a) */
+    /* Caso 2.b) */
     BigInt caso_2_b;
     BigInt caso_2_b_aux;
     temp = 345453453;
@@ -170,6 +171,50 @@ int main(void) {
     big_val(caso_2_g, temp);
     compare(&caso_2_g_aux, &caso_2_g);
 
+    printf("Testagem funcao big_sum(): \n");
+    
+    /* Caso 3.a) */
+    BigInt caso_3_a;
+    BigInt caso_3_a_2;
+    BigInt caso_3_a_res;
+    BigInt caso_3_a_aux;
+
+    temp = 42354235353453;
+    big_val(caso_3_a, temp);
+    temp = 34235346474457;
+    big_val(caso_3_a_2, temp); 
+    temp = 42354235353453 + 34235346474457;
+    big_val(caso_3_a_aux, temp);
+    printf("first\n");
+    dump(caso_3_a_aux, 16);
+
+    big_sum(caso_3_a_res, caso_3_a, caso_3_a_2);
+    printf("first\n");
+    dump(caso_3_a_res, 16);
+
+    compare(&caso_3_a_aux, &caso_3_a_res);
+    /* Caso 3.b) */
+    BigInt caso_3_b;
+    BigInt caso_3_b_2;
+    BigInt caso_3_b_res;
+    BigInt caso_3_b_aux;
+
+    temp = LONG_MAX;
+    big_val(caso_3_b, temp);
+    temp = 1;
+    big_val(caso_3_b_2, temp); 
+    // temp = 581809899;
+    // big_val(caso_3_b_aux, temp);
+
+    big_sum(caso_3_b_res, caso_3_b, caso_3_b_2);
+
+    // printf("\nHardset\n");
+    // dump(caso_3_b_aux, 16); 
+
+  //  printf("\nfunc call\n");
+//    dump(caso_3_b_res, 16); 
+
+    // compare(&caso_3_a_aux, &caso_3_a_res);
 
     return 0;
 }

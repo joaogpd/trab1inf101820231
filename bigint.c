@@ -64,9 +64,22 @@ atr:
 }
 
 /* res = a + b */
-void big_sum(BigInt res, BigInt a, BigInt b);
+void big_sum(BigInt res, BigInt a, BigInt b) {
+    unsigned char excedente = 0;
+    int temp = 0;
+    for (int i = 0; i < 16; i++) {
+        temp = a[i] + b[i];
+        res[i] = excedente;
+        if (temp + excedente > 0xFF) {
+            excedente = (temp + excedente) % 0xFF;
+            res[i] += (unsigned char)(temp - excedente);
+        } else {
+            res[i] += (unsigned char)temp;
+        }          
+    }
+}
 
-/* res = a - b */
+
 void big_sub(BigInt res, BigInt a, BigInt b);
 
 /* res = a * b */
