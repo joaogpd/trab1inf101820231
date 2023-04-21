@@ -122,41 +122,54 @@ int main(void) {
     /* Caso 2.c) */
     BigInt caso_2_c;
     BigInt caso_2_c_aux;
-    temp = LONG_MAX;
+    temp = -1;
     big_val(caso_2_c, temp);
     big_comp2(caso_2_c_aux, caso_2_c);
 
-    temp = -LONG_MAX;
+    temp = 1;
     big_val(caso_2_c, temp);
     compare(&caso_2_c_aux, &caso_2_c);
     /* Caso 2.d) */
     BigInt caso_2_d;
     BigInt caso_2_d_aux;
-    temp = 0;
+    temp = 1;
     big_val(caso_2_d, temp);
     big_comp2(caso_2_d_aux, caso_2_d);
 
-    temp = -0;
+    temp = -1;
     big_val(caso_2_d, temp);
     compare(&caso_2_d_aux, &caso_2_d);
-    /* Caso 2.e) *
-    BigInt caso_1_e;
+    /* Caso 2.e) */
+    BigInt caso_2_e;
+    BigInt caso_2_e_aux;
     temp = LONG_MAX;
-    big_val(caso_1_e, temp);
+    big_val(caso_2_e, temp);
+    big_comp2(caso_2_e_aux, caso_2_e);
 
-    compare(&caso_1_e, &temp);
-    * Caso 2.f) *
-    BigInt caso_1_f;
-    temp = LONG_MIN;
-    big_val(caso_1_f, temp);
-
-    compare(&caso_1_f, &temp);
-    * Caso 2.g) *
-    BigInt caso_1_g;
+    temp = -LONG_MAX;
+    big_val(caso_2_e, temp);
+    compare(&caso_2_e_aux, &caso_2_e);
+    /* Caso 2.f) */
+    BigInt caso_2_f;
+    BigInt caso_2_f_aux;
+    temp = LONG_MIN + 1;
+    big_val(caso_2_f, temp);
+    big_comp2(caso_2_f_aux, caso_2_f);
+    
+    temp = LONG_MAX;
+    big_val(caso_2_f, temp);
+    compare(&caso_2_f_aux, &caso_2_f);
+    /* Caso 2.g) */
+    BigInt caso_2_g;
+    BigInt caso_2_g_aux;
     temp = 0;
-    big_val(caso_1_g, temp);
+    big_val(caso_2_g, temp);
+    big_comp2(caso_2_g_aux, caso_2_g);
 
-    compare(&caso_1_g, &temp);
-    */
+    temp = 0;
+    big_val(caso_2_g, temp);
+    compare(&caso_2_g_aux, &caso_2_g);
+
+
     return 0;
 }

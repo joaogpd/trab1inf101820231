@@ -31,7 +31,10 @@ void big_comp2(BigInt res, BigInt a) {
     unsigned char* part1_dump = (unsigned char*)&part1;
     unsigned char* part2_dump = (unsigned char*)&part2;
 
-    if (part1 == LONG_MIN || part2 == LONG_MIN) return;
+    if (*(part1_dump) == LONG_MIN || *(part2_dump) == LONG_MIN) {
+        printf("LONG_MIN\n"); 
+        return;
+    }
 
 
     for (int i = 0; i < 8; i++) {
