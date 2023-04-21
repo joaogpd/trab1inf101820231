@@ -66,17 +66,15 @@ atr:
 /* res = a + b */
 void big_sum(BigInt res, BigInt a, BigInt b) {
     unsigned char excedente = 0;
-    int temp = 0;
+
     for (int i = 0; i < 16; i++) {
-        temp = a[i] + b[i];
-        res[i] = excedente;
-        if (temp + excedente > 0xFF) {
-            excedente = (temp + excedente) % 0xFF;
-            res[i] += (unsigned char)(temp - excedente);
-        } else {
-            res[i] += (unsigned char)temp;
-        }          
+        unsigned char temp = a[i] + b[i] + excedente;
+        excedente = (temp << 8) & 0xFF;
+        res[i] = (unsigned char)(temp & 0xFF);
     }
+
+    if (excedente != 0) 
+        res[15] = (unsigned char)excedente;
 }
 
 

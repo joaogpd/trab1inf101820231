@@ -69,7 +69,7 @@ int main(void) {
     compare(&caso_1_b, &temp);
     /* Caso 1.c) */
     BigInt caso_1_c;
-    temp = -22;
+    temp = -43;
     big_val(caso_1_c, temp);
 
     compare(&caso_1_c, &temp);
@@ -179,17 +179,25 @@ int main(void) {
     BigInt caso_3_a_res;
     BigInt caso_3_a_aux;
 
-    temp = 42354235353453;
+    temp = 0x82;
     big_val(caso_3_a, temp);
-    temp = 34235346474457;
+    temp = 0xF0;
     big_val(caso_3_a_2, temp); 
-    temp = 42354235353453 + 34235346474457;
+    temp = 0x172;
     big_val(caso_3_a_aux, temp);
-    printf("first\n");
+
+    printf("\nnum 1\n");
+    dump(caso_3_a, 16);
+
+    printf("\nnum 2\n");
+    dump(caso_3_a_2, 16);
+
+    printf("\nHardset\n");
     dump(caso_3_a_aux, 16);
 
     big_sum(caso_3_a_res, caso_3_a, caso_3_a_2);
-    printf("first\n");
+
+    printf("\nfunc call\n");
     dump(caso_3_a_res, 16);
 
     compare(&caso_3_a_aux, &caso_3_a_res);
@@ -201,9 +209,9 @@ int main(void) {
 
     temp = LONG_MAX;
     big_val(caso_3_b, temp);
-    temp = 1;
+    temp = LONG_MAX;
     big_val(caso_3_b_2, temp); 
-    // temp = 581809899;
+    //temp = -290;
     // big_val(caso_3_b_aux, temp);
 
     big_sum(caso_3_b_res, caso_3_b, caso_3_b_2);
@@ -211,10 +219,10 @@ int main(void) {
     // printf("\nHardset\n");
     // dump(caso_3_b_aux, 16); 
 
-  //  printf("\nfunc call\n");
-//    dump(caso_3_b_res, 16); 
+    printf("\nfunc call\n");
+    dump(caso_3_b_res, 16); 
 
-    // compare(&caso_3_a_aux, &caso_3_a_res);
+    //compare(&caso_3_a_aux, &caso_3_a_res);
 
     return 0;
 }
